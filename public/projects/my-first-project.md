@@ -6,8 +6,13 @@ description: "A website I made for gamifying learning binary conversion."
 
 # Binary-Decimal Converter Game
 
+
+[Visit the site here!](https://bintodec.com)
+
+
 ## Project Overview
 Developed a web-based educational game that challenges users to convert numbers between binary and decimal formats. This project was conceived, designed, and implemented independently as a first foray into full-stack web development.
+
 
 ## Key Features
 - **Multiple Game Modes**: 
@@ -19,11 +24,13 @@ Developed a web-based educational game that challenges users to convert numbers 
   - Number Mode: Race to achieve a set number of correct conversions
 - **User Authentication**: Secure login and user profile management
 
+
 ## Technologies Used
 - **Frontend**: React, Next.js
 - **Backend**: Firebase
 - **Authentication**: Clerk
 - **Deployment**: Vercel
+
 
 ## Technical Highlights
 - Implemented responsive UI design using React components and hooks
@@ -32,4 +39,4 @@ Developed a web-based educational game that challenges users to convert numbers 
 - Developed and integrated RESTful APIs for game logic and data management
 - Implemented real-time data storage and retrieval using Firebase
 
-[Live Project](https://bintodec.com)
+

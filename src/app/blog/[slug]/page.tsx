@@ -11,7 +11,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <article className="prose prose-invert max-w-none">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <p className="text-gray-400 mb-8">{post.date}</p>
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+        <div className="markdown-body">
+          <ReactMarkdown>{post.content}</ReactMarkdown>
+        </div>
       </article>
     </Layout>
   );

@@ -13,11 +13,8 @@
     --foreground: #ededed;
   }
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-charter), serif;
+html {
+  font-size: 16px;
 }
 
 @layer utilities {
@@ -89,4 +86,11 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@import 'github-markdown-css/github-markdown.css';
+
+.markdown-body {
+  background-color: transparent;
+  color: inherit;
 }

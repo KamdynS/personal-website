@@ -21,7 +21,9 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
     <Layout>
       <h1 className="text-4xl font-bold mb-8">{project.title}</h1>
       <div className="prose prose-invert max-w-none">
-        <ReactMarkdown>{project.content}</ReactMarkdown>
+        <div className="markdown-body">
+          <ReactMarkdown>{project.content}</ReactMarkdown>
+        </div>
       </div>
     </Layout>
   );
