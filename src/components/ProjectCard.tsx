@@ -11,14 +11,14 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, slug }) => {
   return (
-    <Card className="bg-gray-800 text-white">
+    <Card className="bg-card text-card-foreground hover:shadow-lg transition-shadow">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardTitle className="text-primary">{title}</CardTitle>
+        <CardDescription className="text-muted-foreground">{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <Button asChild>
-          <Link href={`/projects/${slug}`}>View Project</Link>
+        <Button asChild variant="outline" className="text-secondary hover:text-accent">
+        <Link href={`/projects/${slug}`}>View Project</Link>
         </Button>
       </CardContent>
     </Card>

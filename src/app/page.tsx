@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
   return (
     <Layout>  
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+        <h2 className="text-blue-400 hover:underline text-2xl font-semibold mb-4">Experience</h2>
         <div className="space-y-6">
           <Card className="bg-gray-800 text-white">
             <CardHeader>
@@ -72,7 +72,7 @@ const HomePage: React.FC = () => {
       </section>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Education</h2>
+        <h2 className="text-blue-400 hover:underline text-2xl font-semibold mb-4">Education</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="bg-gray-800 text-white">
             <CardHeader>

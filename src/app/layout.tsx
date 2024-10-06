@@ -1,41 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Raleway } from 'next/font/google';
 import "./globals.css";
-import path from 'path';
-import fs from 'fs';
 
-console.log("Current working directory:", process.cwd());
-console.log("Public directory:", path.join(process.cwd(), 'public'));
-try {
-  console.log("Font files:", fs.readdirSync(path.join(process.cwd(), 'public')).filter(file => file.endsWith('.woff')));
-} catch (error) {
-  console.error("Error reading public directory:", error);
-}
-
-const charter = localFont({
-  src: [
-    {
-      path: "../../public/fonts/charter_regular_webfont.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/charter_bold_webfont.woff",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/charter_italic_webfont.woff",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/charter_bold_italic_webfont.woff",
-      weight: "700",
-      style: "italic",
-    },
-  ],
-  variable: "--font-charter",
+const raleway = Raleway({
+  subsets: ['latin'],
+  variable: '--font-raleway',
 });
 
 export const metadata: Metadata = {
@@ -50,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${charter.variable} font-charter antialiased`}>
+      <body className={`${raleway.variable} font-raleway antialiased bg-background`}>
         {children}
       </body>
     </html>
