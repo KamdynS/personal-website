@@ -25,12 +25,10 @@ const HomePage: React.FC = () => {
               <p className="font-semibold">Software Engineer--Contract</p>
               <p className="text-sm text-gray-400 mb-2">February 2024 - Present</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Independently processed large-scale datasets regularly with over 10,000,000 rows of data, delivering processed data directly to stakeholders.</li>
-                <li>Designed, maintained, and optimized ML pipelines running on AWS, ensuring efficient handling of millions of rows of data every day.</li>
-                <li>Developed and implemented a Retrieval-Augmented Generation (RAG) system using LangChain, enhancing data retrieval and insight extraction from diverse databases of over 50 different documents.</li>
-                <li>Wrote and deployed scripts leveraging large language models (LLMs) for advanced data processing, data transformation, and analysis.</li>
-                <li>Alongside 1 senior engineer, I oversaw the end-to-end design, planning, software development, and deployment processes in the absence of a CTO, demonstrating strong leadership, independence, and technical expertise.</li>
-                <li>Initialized and maintained various AWS services such as EMR, S3, EC2, SageMaker, and Lambda to facilitate cloud-based data processing.</li>
+                <li>Architected and optimized high-performance ML pipelines on AWS using EMR and PySpark, processing <span className="text-blue-400">10M+</span> rows daily with 99.9% uptime</li>
+                <li>Developed scalable RESTful APIs using AWS API gateway linked with Lambdas, handling <span className="text-blue-400">100+</span> requests per minute</li>
+                <li>Implemented efficient data storage solutions using MySQL and MongoDB, reducing query times by <span className="text-blue-400">40%</span></li>
+                <li>Optimized AWS infrastructure (EMR, S3, EC2, SageMaker, Lambda) for cost-efficiency, reducing monthly expenses by <span className="text-blue-400">25%</span></li>
               </ul>
             </CardContent>
           </Card>
@@ -44,9 +42,9 @@ const HomePage: React.FC = () => {
               <p className="font-semibold">Graduate Technology Consultant</p>
               <p className="text-sm text-gray-400 mb-2">May 2023 - April 2024</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Provided expert consultation to over 600 staff and faculty members, enhancing technology proficiency and productivity.</li>
-                <li>Managed regular maintenance for approximately 200 computers, optimizing performance and bolstering security.</li>
-                <li>Assisted in the integration of numerous computers onto JAMF software in various departments.</li>
+                <li>Provided expert consultation to over <span className="text-blue-400">600</span> staff and faculty members, enhancing technology proficiency and productivity.</li>
+                <li>Managed regular maintenance for approximately <span className="text-blue-400">200</span> computers, optimizing performance and bolstering security.</li>
+                <li>Assisted in the integration of <span className="text-blue-400">25+</span> computers onto JAMF software in various departments.</li>
               </ul>
             </CardContent>
           </Card>
