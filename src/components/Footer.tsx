@@ -10,16 +10,16 @@ const Footer: React.FC = () => {
             <p className="text-muted-foreground">&copy; 2024 Kamdyn Shaeffer. All rights reserved.</p>
           </div>
           <div className="flex space-x-4">
-            <a href="mailto:your.email@example.com" className="text-primary hover:text-accent transition-colors">
+            <a href="mailto:kamdynshaefferbusiness@gmail.com" className="text-primary hover:text-accent transition-colors">
               <FaEnvelope size={24} />
             </a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors">
+            <a href="https://twitter.com/kamdynshaeffer" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors">
               <FaTwitter size={24} />
             </a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors">
+            <a href="https://github.com/kamdyns" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors">
               <FaGithub size={24} />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors">
+            <a href="https://www.linkedin.com/in/kshaeffer1844/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors">
               <FaLinkedin size={24} />
             </a>
           </div>
