@@ -1,8 +1,18 @@
 import React from 'react';
 import Layout from '@/components/Layout';
-import { getBlogPostBySlug } from '@/lib/blogUtils';
+import { getBlogPostBySlug, getBlogPosts } from '@/lib/blogUtils';
 import ReactMarkdown from 'react-markdown';
 import { ComponentProps } from 'react';
+
+export const dynamic = 'force-static';
+
+// Add generateStaticParams to pre-render all blog posts at build time
+export async function generateStaticParams() {
+  const posts = getBlogPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 const MarkdownComponents: Partial<ComponentProps<typeof ReactMarkdown>['components']> = {
   h1: ({ children }) => <h1 className="text-4xl font-bold mb-4 text-primary">{children}</h1>,

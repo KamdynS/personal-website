@@ -1,9 +1,19 @@
 import React from 'react';
 import Layout from '@/components/Layout';
-import { getProjectBySlug } from '@/lib/projectUtils';
+import { getProjectBySlug, getProjects } from '@/lib/projectUtils';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { ComponentProps } from 'react';
+
+export const dynamic = 'force-static';
+
+// Add generateStaticParams to pre-render all project pages at build time
+export async function generateStaticParams() {
+  const projects = getProjects();
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
 const MarkdownComponents: Partial<ComponentProps<typeof ReactMarkdown>['components']> = {
   h1: ({ children }) => <h1 className="text-4xl font-bold mb-4 text-primary">{children}</h1>,

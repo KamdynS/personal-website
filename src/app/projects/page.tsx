@@ -2,6 +2,9 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import ProjectCard from '@/components/ProjectCard';
 import { getProjects } from '@/lib/projectUtils';
+
+export const dynamic = 'force-static';
+
 const ProjectsPage: React.FC = () => {
   const projects = getProjects();
   return (

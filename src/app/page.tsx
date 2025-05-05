@@ -7,6 +7,8 @@ import { getBlogPosts } from '@/lib/blogUtils';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
+export const dynamic = 'force-static';
+
 const HomePage: React.FC = () => {
   const projects = getProjects().slice(0, 3); // Get the 3 most recent projects
   const recentBlogPost = getBlogPosts()[0]; // Get the most recent blog post
@@ -18,12 +20,28 @@ const HomePage: React.FC = () => {
         <div className="space-y-6">
           <Card className="bg-gray-800 text-white">
             <CardHeader>
+              <CardTitle>Emerge Haus</CardTitle>
+              <CardDescription>Boston, Massachusetts</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="font-semibold">Mid-Level AI Engineer</p>
+              <p className="text-sm text-gray-400 mb-2">December 2024 - Present</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Led and implemented <span className="text-blue-400">90%</span> of the codebase for a comprehensive authentication system migration, ensuring seamless user transition</li>
+                <li>Architected and deployed a PGMQ-based queue system, reducing server crashes by <span className="text-blue-400">95%</span> and improving platform stability</li>
+                <li>Develop and maintain AI-powered content processing pipeline for sermon-to-social media transformation, serving <span className="text-blue-400">4000+</span> weekly active users</li>
+                <li>Drive full-stack development with focus on backend infrastructure, consistently delivering new features and optimizations</li>
+              </ul>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 text-white">
+            <CardHeader>
               <CardTitle>CultureX at MIT</CardTitle>
               <CardDescription>Cambridge, Massachusetts</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="font-semibold">Software Engineer--Contract</p>
-              <p className="text-sm text-gray-400 mb-2">February 2024 - Present</p>
+              <p className="text-sm text-gray-400 mb-2">February 2024 - September 2024</p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Architected and optimized high-performance ML pipelines on AWS using EMR and PySpark, processing <span className="text-blue-400">10M+</span> rows daily with 99.9% uptime</li>
                 <li>Developed scalable RESTful APIs using AWS API gateway linked with Lambdas, handling <span className="text-blue-400">100+</span> requests per minute</li>
@@ -51,6 +69,28 @@ const HomePage: React.FC = () => {
         </div>
       </section>
       
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">
+          <Link href="/blog" className="text-blue-400 hover:underline">
+            Recent Blog Post
+          </Link>
+        </h2>
+        {recentBlogPost && (
+          <Card className="bg-gray-800 text-white">
+            <CardHeader>
+              <CardTitle>{recentBlogPost.title}</CardTitle>
+              <CardDescription>{new Date(recentBlogPost.date).toLocaleDateString()}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4">{recentBlogPost.content.slice(0, 150)}...</p>
+              <Button asChild>
+                <Link href={`/blog/${recentBlogPost.slug}`}>Read More</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        )}
+      </section>
+
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">
           <Link href="/projects" className="text-blue-400 hover:underline">
@@ -93,28 +133,6 @@ const HomePage: React.FC = () => {
             </CardContent>
           </Card>
         </div>
-      </section>
-      
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">
-          <Link href="/blog" className="text-blue-400 hover:underline">
-            Recent Blog Post
-          </Link>
-        </h2>
-        {recentBlogPost && (
-          <Card className="bg-gray-800 text-white">
-            <CardHeader>
-              <CardTitle>{recentBlogPost.title}</CardTitle>
-              <CardDescription>{new Date(recentBlogPost.date).toLocaleDateString()}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="mb-4">{recentBlogPost.content.slice(0, 150)}...</p>
-              <Button asChild>
-                <Link href={`/blog/${recentBlogPost.slug}`}>Read More</Link>
-              </Button>
-            </CardContent>
-          </Card>
-        )}
       </section>
     </Layout>
   );

@@ -76,12 +76,14 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
+  		fontFamily: {
+  			charter: ["var(--font-charter)", "serif"],
+  			raleway: ["var(--font-raleway)", "sans-serif"],
+  			mono: ['JetBrains Mono', 'monospace'],
+  			sans: ['JetBrains Mono', 'sans-serif'],
   		}
   	},
-  	fontFamily: {
-  		charter: ["var(--font-charter)", "serif"],
-  		raleway: ["var(--font-raleway)", "sans-serif"],
-  	}
   },
   plugins: [require("tailwindcss-animate")],
 };
