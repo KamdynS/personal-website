@@ -10,8 +10,8 @@ import { Button } from '@/components/ui/button';
 export const dynamic = 'force-static';
 
 const HomePage: React.FC = () => {
-  const projects = getProjects().slice(0, 3); // Get the 3 most recent projects
-  const recentBlogPost = getBlogPosts()[0]; // Get the most recent blog post
+  const projects = getProjects().slice(0, 3); 
+  const recentBlogPost = getBlogPosts()[0]; 
 
   return (
     <Layout>  
