@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 const Header: React.FC = () => {
   return (
     <header className="bg-background py-4">
-      <nav className="container mx-auto px-4 flex justify-between items-center">
+      <nav className="px-8 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-primary">
           Kamdyn Shaeffer
         </Link>
