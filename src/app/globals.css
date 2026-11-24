@@ -2,55 +2,160 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Everforest, medium contrast. https://github.com/sainnhe/everforest */
 :root {
-  --background: 229 31% 12%;
-  --foreground: 227 70% 87%;
-
-  --muted: 228 25% 20%;
-  --muted-foreground: 228 35% 69%;
-
-  --popover: 229 23% 15%;
-  --popover-foreground: 227 70% 87%;
-
-  --card: 229 23% 15%;
-  --card-foreground: 227 70% 87%;
-
-  --border: 228 25% 25%;
-  --input: 228 25% 25%;
-
-  --primary: 277 59% 72%;
-  --primary-foreground: 229 31% 12%;
-
-  --secondary: 199 76% 69%;
-  --secondary-foreground: 229 31% 12%;
-
-  --accent: 0 59% 79%;
-  --accent-foreground: 229 31% 12%;
-
-  --destructive: 1 71% 69%;
-  --destructive-foreground: 229 31% 12%;
-
-  --ring: 239 66% 85%;
-
-  --radius: 0.5rem;
+  color-scheme: dark;
+  --bg: #2d353b;
+  --bg-raised: #343f44;
+  --line: #4f585e;
+  --text: #d3c6aa;
+  --muted: #9da9a0;
+  --green: #a7c080;
+  --red: #e67e80;
+  --orange: #e69875;
+  --yellow: #dbbc7f;
+  --aqua: #83c092;
+  --blue: #7fbbb3;
+  --purple: #d699b6;
 }
 
-
-
-html {
-  font-family: var(--font-raleway), sans-serif;
-  font-size: 16px;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Everforest's light accents are too pale for small text, so these are darkened. */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #fdf6e3;
+    --bg-raised: #f4f0d9;
+    --line: #d8d3ba;
+    --text: #465258;
+    --muted: #66716d;
+    --green: #5f6f00;
+    --red: #b83a37;
+    --orange: #a5501c;
+    --yellow: #84620a;
+    --aqua: #25704f;
+    --blue: #246f9c;
+    --purple: #a04580;
   }
 }
 
-@import 'github-markdown-css/github-markdown.css';
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 2rem;
+}
 
-.markdown-body {
-  background-color: transparent;
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-xenon);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+::selection { background: var(--green); color: var(--bg); }
+
+a {
   color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+a:hover { color: var(--green); }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
+strong { font-weight: 700; }
+.muted { color: var(--muted); }
+
+.page {
+  max-width: calc(70ch + 3rem);
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+h1, h2, h3 { font-weight: 700; }
+h1 { text-wrap: balance; font-size: 1.75rem; line-height: 1.3; letter-spacing: -0.03em; }
+h2 { color: var(--green); }
+
+/* Home */
+
+header p { margin-top: 1.25rem; }
+section { margin-top: 4rem; }
+section > h2 { margin-bottom: 1.25rem; }
+
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem 2ch; margin-top: 1.25rem; }
+
+.item + .item { margin-top: 2rem; }
+
+.scale { margin-top: 1rem; }
+.scale-bar {
+  height: 0.75rem;
+  background: linear-gradient(to right, var(--green) calc(100% / 260), var(--bg-raised) 0);
+}
+.scale-key {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 13px;
+}
+.scale-key span:first-child { color: var(--green); }
+
+.roles li { display: grid; grid-template-columns: 9ch minmax(0, 1fr); gap: 0 3ch; }
+.roles li + li { margin-top: 1rem; }
+.years { color: var(--muted); }
+.role { display: block; }
+
+/* Articles */
+
+.home-link { margin-bottom: 3rem; }
+.prose { margin-top: 3rem; }
+.prose > * + * { margin-top: 1.25rem; }
+.prose h2 { margin-top: 3.5rem; font-size: 1.2rem; line-height: 1.4; }
+.prose h3 { margin-top: 2.5rem; }
+.prose ul, .prose ol { padding-left: 3ch; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li + li { margin-top: 0.5rem; }
+.prose li::marker { color: var(--green); }
+.prose blockquote { padding-left: 2ch; border-left: 2px solid var(--line); color: var(--muted); }
+.prose hr { margin-block: 3rem; border-color: var(--line); }
+
+.prose pre, .prose code { font-family: inherit; }
+.prose :not(pre) > code { padding: 0.1em 0.35em; background: var(--bg-raised); overflow-wrap: anywhere; }
+.prose pre {
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  background: var(--bg-raised);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.table-scroll { overflow-x: auto; }
+.prose table { width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.prose th { color: var(--muted); font-weight: 400; text-align: left; }
+.prose th, .prose td { padding: 0.5rem 2ch 0.5rem 0; border-bottom: 1px solid var(--line); }
+
+.prose :is(th, td):last-child { padding-right: 0; }
+
+.figure { display: block; }
+.figure img { width: auto; margin-inline: auto; }
+.figure .muted { display: block; margin-top: 0.75rem; font-size: 13.5px; }
+
+.footnotes { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 13.5px; }
+.footnotes > h2 { display: none; }
+
+.post-footer { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); }
+
+.hljs-comment, .hljs-quote { color: var(--muted); font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-section, .hljs-deletion { color: var(--red); }
+.hljs-title, .hljs-string, .hljs-addition { color: var(--green); }
+.hljs-built_in, .hljs-type, .hljs-title.class_ { color: var(--yellow); }
+.hljs-number, .hljs-literal, .hljs-symbol { color: var(--purple); }
+.hljs-attr, .hljs-property, .hljs-variable { color: var(--blue); }
+.hljs-operator, .hljs-meta { color: var(--orange); }
+.hljs-regexp, .hljs-link { color: var(--aqua); }
+
+@media (max-width: 600px) {
+  .page { padding-block: 3.5rem; }
+  .roles li { grid-template-columns: 1fr; }
 }
